@@ -1,0 +1,35 @@
+{
+  "description": "Synthetic local-only invoice email fixtures. No messages are sent or fetched.",
+  "fixtures": [
+    {
+      "id": "genuine-invoice",
+      "sender": "service@paypal.com",
+      "senderName": "PayPal",
+      "subject": "Invoice from Cedar Grove Design",
+      "content": "Cedar Grove Design invoice for completed work: $145.00. Please see the attached statement for details. Thanks again for working with us. Invoice number MOCK-INV-GENUINE-001. This is available at paypal.com.",
+      "mockInvoice": {
+        "id": "MOCK-INV-GENUINE-001",
+        "amount": 145,
+        "paypalVerified": true,
+        "senderKnown": true
+      },
+      "expectedEmailLevel": "SAFE",
+      "expectedInvoiceLevel": "SAFE"
+    },
+    {
+      "id": "fraudulent-invoice",
+      "sender": "billing@paypal-invoice-review.example.invalid",
+      "senderName": "PayPal Billing Support",
+      "subject": "URGENT: PayPal invoice payment required within 24 hours",
+      "content": "Invoice MOCK-INV-FRAUD-002 for $599.99 was auto-renewed. If you did not authorize it, call our cancellation helpline immediately and read your one-time password (OTP) to the agent. Review account details at http://paypal-security.example.invalid/login.",
+      "mockInvoice": {
+        "id": "MOCK-INV-FRAUD-002",
+        "amount": 599.99,
+        "paypalVerified": false,
+        "senderKnown": false
+      },
+      "expectedEmailLevel": "QUARANTINE",
+      "expectedInvoiceLevel": "QUARANTINE"
+    }
+  ]
+}

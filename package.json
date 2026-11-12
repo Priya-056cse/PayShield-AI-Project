@@ -1,0 +1,43 @@
+{
+  "name": "payshield-ai",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PayPal Scam Defense Agent - Intelligent scam detection and automatic invoice quarantine",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "test:email-classifier": "node scripts/test-email-classifier.mjs",
+    "test:local-fixtures": "node scripts/test-local-invoice-fixtures.mjs",
+    "test:security-workflows": "node scripts/test-security-workflows.mjs",
+    "train:email-model": "python scripts/train-email-classifier.py"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^3.0.137",
+    "@paypal/agent-toolkit": "^1.11.0",
+    "ai": "^6.0.323",
+    "better-sqlite3": "^12.11.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.453.0",
+    "next": "^14.2.15",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "server-only": "^0.0.1",
+    "tailwind-merge": "^2.5.4",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^20.17.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.15",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3"
+  }
+}
